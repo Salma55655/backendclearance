@@ -25,6 +25,9 @@ app.use("/api/staff", staffRoutes);
 app.get("/", (req, res) => {
   res.send("🚀 Backend is working on Vercel!");
 });
+app.get("/api/staff/test", (req, res) => {
+  res.json({ message: "✅ Staff route is working" });
+});
 
 
 // app.listen(4000, () => {
