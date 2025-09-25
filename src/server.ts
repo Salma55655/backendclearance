@@ -9,6 +9,7 @@ import staffRoutes from "./routes/staff";
 
 
 const app = express();
+app.use(express.json());
 app.use(cors()); 
 app.use(bodyParser.json());
 
@@ -21,7 +22,13 @@ mongoose.connect(MONGO_URI)
 // API routes
 app.use("/api/students", studentRoutes);
 app.use("/api/staff", staffRoutes);
-
-app.listen(4000, () => {
-  console.log("Server running on http://localhost:4000");
+app.get("/", (req, res) => {
+  res.send("🚀 Backend is working on Vercel!");
 });
+
+
+// app.listen(4000, () => {
+//   console.log("Server running on http://localhost:4000");
+// });
+
+export default app;
