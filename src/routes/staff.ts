@@ -16,9 +16,5 @@ router.post("/", async (req, res) => {
   res.status(201).json(staff);
 });
 
-app.get("/api/staff/test", (req, res) => {
-  res.json({ message: "✅ Staff route is working" });
-});
-
 
 export default router;
